@@ -1,4 +1,6 @@
-# ❄️ Hyprspace | Xiaomi Book Pro 2022
+![My Desktop Setup](assets/shell.png)
+
+# Hyprspace | Xiaomi Book Pro 2022
 
 Custom Wayland-based environment for **CachyOS**, optimized for high-density OLED displays and hybrid graphics.
 

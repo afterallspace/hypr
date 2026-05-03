@@ -1,7 +1,5 @@
 {
-  "bar.customModules.storage.paths": [
-    "/"
-  ],
+  "bar.customModules.storage.paths": ["/"],
   "menus.transition": "crossfade",
   "scalingPriority": "hyprland",
   "bar.autoHide": "never",
@@ -9,19 +7,9 @@
   "theme.font.weight": 500,
   "bar.layouts": {
     "0": {
-      "left": [
-        "workspaces",
-        "windowtitle"
-      ],
-      "middle": [
-        "clock",
-        "media"
-      ],
-      "right": [
-        "kbinput",
-        "volume",
-        "battery"
-      ]
+      "left": ["workspaces", "windowtitle"],
+      "middle": ["clock", "media"],
+      "right": ["kbinput", "volume", "battery"]
     }
   },
   "bar.workspaces.monitorSpecific": true,

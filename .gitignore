@@ -9,6 +9,7 @@
 !/xdg-desktop-portal/
 !/xsettingsd/
 !/wireplumber/
+!/assets/
 !gamemode.ini
 !starship.toml
 !mimeapps.list

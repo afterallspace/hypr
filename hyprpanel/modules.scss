@@ -1,0 +1,889 @@
+@import "/home/afterall/.cache/wal/colors.scss";
+
+// Sizes
+$p: 16px;
+$pMin: 2px;
+$pRound: 12px;
+$gap: 4px;
+$vSpace: 4px;
+$hSpace: 10px;
+$iSize: 1.2rem;
+$fSize: 1rem;
+$fWeight: 500;
+
+// Colors
+$tr: background-color 0.3s ease;
+$trCl: color 0.3s ease;
+$opacity: 0.5;
+$bgMain: $background;
+$bgBtn: rgba($color1, $opacity);
+$bgHover: rgba($color2, $opacity);
+$bgActive: rgba($color3, $opacity);
+
+.bar {
+  .bar-panel-container {
+    padding: $p $p 0 $p;
+
+    .bar-panel {
+      background-color: $bgMain;
+      border-radius: $pRound;
+      transition: $tr;
+
+      .box-left,
+      .box-center,
+      .box-right {
+        padding: $pMin;
+
+        & > *,
+        & > eventbox > * {
+          padding-right: $pMin;
+        }
+      }
+
+      .box-right {
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+
+      .box-left {
+        .workspaces-box-container {
+          .workspace-button {
+            &:not(:last-child) {
+              margin-right: $pMin;
+            }
+
+            &:hover {
+              label {
+                background-color: $bgHover;
+
+                &.active {
+                  background-color: $bgHover;
+                }
+              }
+            }
+
+            label {
+              color: $foreground;
+              padding: $vSpace $hSpace;
+              background-color: $bgBtn;
+              border-radius: calc($pRound - $pMin);
+              transition: $tr;
+              letter-spacing: -$pMin;
+              font-size: calc($iSize * 1.1);
+
+              &.active {
+                background-color: $bgActive;
+              }
+            }
+          }
+        }
+
+        .windowtitle-container {
+          margin: 0 calc($hSpace - $pMin);
+
+          label {
+            color: $foreground;
+
+            &:not(:last-child) {
+              font-size: calc($iSize * 1.1);
+              margin-right: $gap;
+            }
+          }
+        }
+      }
+
+      .box-center {
+        .clock {
+          &:hover {
+            label {
+              background-color: $bgHover;
+            }
+          }
+
+          label {
+            color: $foreground;
+            padding: $vSpace $hSpace;
+            border-radius: calc($pRound - $pMin);
+            transition: $tr;
+          }
+        }
+
+        .media {
+          &:hover {
+            .media-container {
+              background-color: $bgHover;
+            }
+          }
+
+          .media-container {
+            padding: $vSpace $hSpace;
+            background-color: $bgBtn;
+            border-radius: calc($pRound - $pMin);
+            transition: $tr;
+
+            label {
+              color: $foreground;
+
+              &:not(:last-child) {
+                margin-right: $gap;
+              }
+            }
+          }
+        }
+      }
+
+      .box-right {
+        button.kblayout {
+          box {
+            margin: 0 calc($hSpace - $pMin);
+
+            label {
+              color: $foreground;
+
+              &:first-child {
+                font-size: $iSize;
+                margin-right: $gap;
+              }
+            }
+          }
+        }
+
+        button.volume {
+          &:hover {
+            box {
+              background-color: $bgHover;
+            }
+          }
+
+          box {
+            padding: $vSpace $hSpace;
+            background-color: $bgBtn;
+            border-radius: calc($pRound - $pMin);
+            transition: $tr;
+
+            label {
+              color: $foreground;
+              min-width: calc($p * 0.8);
+              &:not(:last-child) {
+                font-size: $iSize;
+                margin-right: $gap;
+              }
+            }
+          }
+        }
+
+        button.network {
+          &:hover {
+            box.network-container {
+              background-color: $bgHover;
+            }
+          }
+
+          box.network-container {
+            padding: $vSpace $hSpace;
+            background-color: $bgBtn;
+            border-radius: calc($pRound - $pMin);
+            transition: $tr;
+
+            icon {
+              font-size: $iSize;
+              color: $foreground;
+            }
+          }
+        }
+
+        button.bluetooth {
+          &:hover {
+            box {
+              background-color: $bgHover;
+            }
+          }
+
+          box {
+            padding: $vSpace $hSpace;
+            background-color: $bgBtn;
+            border-radius: calc($pRound - $pMin);
+            transition: $tr;
+
+            label {
+              font-size: $iSize;
+              min-width: calc($p * 0.8);
+              color: $foreground;
+            }
+          }
+        }
+
+        button.battery {
+          &:hover {
+            box {
+              background-color: $bgHover;
+            }
+          }
+
+          box {
+            padding: $vSpace $hSpace;
+            background-color: $bgBtn;
+            border-radius: calc($pRound - $pMin);
+            transition: $tr;
+
+            label {
+              color: $foreground;
+
+              &:not(:last-child) {
+                font-size: $iSize;
+                margin-right: $gap;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.osd-container {
+  padding: $p;
+
+  .horizontal {
+    .osd-icon-container {
+      background-color: $bgMain;
+      transition: $tr;
+      padding: $pMin 0 $pMin $pMin;
+      border-radius: $pRound 0 0 $pRound;
+
+      label {
+        min-width: $p;
+        background-color: $bgBtn;
+        transition: $tr;
+        border-radius: calc($pRound - $pMin);
+        padding: $vSpace $hSpace;
+        font-size: $iSize;
+        color: $foreground;
+      }
+    }
+
+    .osd-bar-container {
+      padding: $pMin;
+      background-color: $bgMain;
+      transition: $tr;
+
+      .osd-bar {
+        trough {
+          .empty {
+            background-color: $bgBtn;
+            transition: $tr;
+            border-radius: calc($pRound - $pMin);
+          }
+
+          .high,
+          .filled {
+            background-color: $bgActive;
+            transition: $tr;
+            border-radius: calc($pRound - $pMin);
+          }
+        }
+      }
+    }
+
+    .osd-label-container {
+      background-color: $bgMain;
+      transition: $tr;
+      padding: $pMin $pMin $pMin 0;
+      border-radius: 0 $pRound $pRound 0;
+
+      label {
+        padding: $vSpace $hSpace;
+        color: $foreground;
+        min-width: calc($p * 1.5);
+      }
+    }
+  }
+}
+
+tooltip {
+  background-color: $color1;
+  transition: $tr;
+  margin: $vSpace $hSpace;
+  border-radius: $pRound;
+
+  label {
+    font-size: $fSize;
+    padding: 0;
+    color: $foreground;
+  }
+}
+
+.menu-event-box {
+  .dropdown-menu-container {
+    margin: 0;
+    padding: 0;
+    min-height: 0;
+
+    revealer {
+      padding: calc(($p * 2) + ($pMin * 5) + $iSize + ($vSpace * 3)) $p $p $p;
+
+      .dropdown-content {
+        box.calendar-menu-content {
+          .calendar-content-container {
+            background-color: $bgMain;
+            transition: $tr;
+            border-radius: $pRound;
+
+            .calendar-content-items {
+              margin: $pMin;
+
+              .clock {
+                transition: $tr;
+                border-radius: calc($pRound - $pMin);
+                margin-bottom: $pMin;
+
+                .clock-content-items {
+                  min-height: calc($p * 5);
+
+                  box {
+                    .clock-content-time,
+                    .clock-content-period {
+                      color: $foreground;
+                    }
+
+                    .clock-content-period {
+                      margin-bottom: $p;
+                    }
+                  }
+                }
+              }
+            }
+
+            .calendar {
+              background-color: $bgBtn;
+              transition: $tr;
+              border-radius: calc($pRound - $pMin);
+              margin: 0;
+
+              .calendar-container-box {
+                padding: 0;
+
+                .calendar-menu-widget {
+                  transition: $tr;
+                  color: $foreground;
+
+                  &:selected {
+                    color: $foreground;
+                    background-color: $bgBtn;
+                    box-shadow: inset 0 -0.4rem 0 0 $bgActive;
+                  }
+
+                  &.button {
+                    transition: $tr;
+                    color: $foreground;
+                  }
+
+                  &.highlight {
+                    color: $foreground;
+                    background-color: $bgActive;
+                  }
+
+                  &:indeterminate {
+                    color: $bgActive;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        box.media.menu-items {
+          background-color: $bgMain;
+          border-radius: $pRound;
+          padding: $pMin;
+          transition: $tr;
+
+          .menu-items-container {
+            min-height: 0;
+            .menu-section-container {
+              margin: 0;
+              .menu-items-section {
+                margin: 0;
+                .menu-content {
+                  padding: $p;
+                  border-radius: calc($pRound - $pMin);
+
+                  * {
+                    color: $foreground;
+                    transition: $tr;
+                  }
+
+                  .media-indicator-current-song-name,
+                  .media-indicator-current-song-author {
+                    margin-bottom: $gap;
+                  }
+
+                  .media-indicator-current-song-name {
+                    label {
+                      font-size: $iSize;
+                      font-weight: 600;
+                    }
+                  }
+
+                  .media-indicator-current-controls {
+                    margin: $p;
+
+                    & > button,
+                    & > box button {
+                      margin: 0;
+                      padding: 0;
+                      background-color: $bgBtn;
+                      transition: $tr;
+                      border-radius: calc($pRound - $pMin);
+                      min-width: calc($p * 3);
+                      min-height: calc($p * 2);
+
+                      &:hover {
+                        background-color: $bgHover;
+                      }
+
+                      &.disabled {
+                        background-color: $bgActive;
+
+                        &:hover {
+                          background-color: $bgActive;
+                        }
+                      }
+                    }
+
+                    & > button:not(:last-child),
+                    & > box button {
+                      margin-right: $pMin;
+                    }
+                  }
+
+                  .media-indicator-current-progress-bar {
+                    .progress {
+                      margin: 0;
+
+                      contents {
+                        trough {
+                          background-color: $bgActive;
+                          slider {
+                            color: $foreground;
+                            background-color: $foreground;
+                          }
+
+                          highlight {
+                            color: $foreground;
+                            background-color: $bgBtn;
+                            border-radius: calc($pRound - $pMin);
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        box.audio.menu-items {
+          background-color: $bgMain;
+          border-radius: $pRound;
+          transition: $tr;
+          padding: $pMin;
+
+          .menu-items-container {
+            .menu-section-container {
+              margin: 0;
+              .menu-label-container {
+                padding: $p 0 $pMin $hSpace;
+                margin: 0;
+                min-height: 0;
+
+                label {
+                  margin-left: 0;
+                }
+
+                button {
+                  background-color: $bgBtn;
+                  padding: $vSpace $hSpace;
+                  transition: $tr;
+                  border-radius: calc($pRound - $pMin);
+                  margin: 0;
+                  min-width: calc($p * 0.9);
+
+                  label {
+                    font-size: $fSize;
+                  }
+                }
+              }
+
+              revealer {
+                padding: 0;
+                margin: 0;
+
+                box.menu-items-section {
+                  border-radius: calc($pRound - $pMin);
+                  transition: $tr;
+                  background-color: $bgBtn;
+                  margin: 0;
+                  padding: $hSpace;
+
+                  .menu-active-container {
+                    margin: 0;
+                    .menu-slider-container {
+                      margin: $pMin;
+
+                      button {
+                        border-radius: calc($pRound - $pMin);
+                        transition: $tr;
+                        background-color: $bgBtn;
+                        padding: $hSpace;
+                        margin: 0;
+
+                        icon {
+                          font-size: $fSize;
+                          color: $foreground;
+                        }
+
+                        &:hover {
+                          background-color: $bgHover;
+
+                          icon {
+                            color: $foreground;
+                          }
+                        }
+                      }
+
+                      .vertical {
+                        label {
+                          margin: $pMin $hSpace;
+                        }
+
+                        scale {
+                          margin: $pMin $hSpace;
+
+                          contents {
+                            trough {
+                              background-color: $bgActive;
+                              slider {
+                                color: $foreground;
+                                background-color: $foreground;
+                              }
+
+                              highlight {
+                                color: $foreground;
+                                background-color: $bgBtn;
+                                border-radius: calc($pRound - $pMin);
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+
+              label {
+                font-size: $fSize;
+                font-weight: $fWeight;
+                color: $foreground;
+              }
+            }
+
+            .menu-items-section {
+              margin: 0;
+              padding: 0;
+
+              .menu-container {
+                & > button {
+                  border-radius: calc($pRound - $pMin);
+                  transition: $tr;
+                  background-color: $bgBtn;
+                  margin: 0;
+                  padding: $hSpace;
+
+                  &:hover {
+                    background-color: $bgHover;
+
+                    label {
+                      color: $foreground;
+                    }
+                  }
+
+                  &:not(:last-child) {
+                    margin-bottom: $pMin;
+                  }
+
+                  box {
+                    .menu-button-icon {
+                      margin-right: $gap;
+                      font-size: $iSize;
+                      background-color: $bgBtn;
+                      border-radius: calc($pRound - $pMin);
+                      transition: $tr;
+                      padding: 0 $hSpace;
+
+                      &.active {
+                        background-color: $bgActive;
+                      }
+                    }
+
+                    .menu-button-name {
+                      margin: 0;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        box.energy.menu-items {
+          background-color: $bgMain;
+          border-radius: $pRound;
+          transition: $tr;
+          padding: $pMin;
+
+          .menu-items-container {
+            .menu-section-container {
+              margin: 0;
+
+              label {
+                font-size: $fSize;
+                font-weight: $fWeight;
+                color: $foreground;
+              }
+
+              .menu-label-container {
+                min-height: 0;
+                margin: 0;
+                padding: $p 0 $pMin $hSpace;
+
+                label {
+                  margin: 0;
+                }
+
+                .uptime {
+                  background-color: $bgBtn;
+                  padding: $vSpace $hSpace;
+                  transition: $tr;
+                  border-radius: calc($pRound - $pMin);
+                  margin: 0;
+                  font-variant: small-caps;
+                }
+              }
+
+              .menu-items-section {
+                margin: 0;
+                padding: 0;
+
+                .brightness-container {
+                  border-radius: calc($pRound - $pMin);
+                  background-color: $bgBtn;
+                  padding: $hSpace;
+                  margin: $gap 0 0 0;
+
+                  .brightness-slider-icon {
+                    min-height: 0;
+                    min-width: 0;
+                    font-size: $iSize;
+                    color: $foreground;
+                    padding: $hSpace;
+                    border-radius: calc($pRound - $pMin);
+                    transition: $tr;
+                    background-color: $bgBtn;
+                  }
+
+                  scale {
+                    margin: $pMin $hSpace;
+
+                    contents {
+                      trough {
+                        background-color: $bgActive;
+                        slider {
+                          color: $foreground;
+                          background-color: $foreground;
+                        }
+
+                        highlight {
+                          color: $foreground;
+                          background-color: $bgBtn;
+                          border-radius: calc($pRound - $pMin);
+                        }
+                      }
+                    }
+                  }
+                }
+
+                .power-profile-item {
+                  border-radius: calc($pRound - $pMin);
+                  transition: $tr;
+                  background-color: $bgBtn;
+                  margin: 0;
+                  padding: $hSpace;
+
+                  &:hover {
+                    background-color: $bgHover;
+
+                    box {
+                      .power-profile-label {
+                        color: $foreground;
+                        transition: $trCl;
+                      }
+                    }
+                  }
+
+                  &.active {
+                    background-color: $bgActive;
+                  }
+
+                  &:not(:last-child) {
+                    margin-bottom: $pMin;
+                  }
+
+                  box {
+                    .power-profile-icon {
+                      margin-right: $gap;
+                      font-size: $fSize;
+                      background-color: $bgBtn;
+                      border-radius: calc($pRound - $pMin);
+                      transition: $tr;
+                      color: $foreground;
+                      padding: $vSpace $hSpace;
+                    }
+
+                    .power-profile-label {
+                      margin: 0;
+                      color: $foreground;
+                      font-size: $iSize;
+                      font-variant: small-caps;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.notifications-window {
+  .notification-card-container {
+    padding: $p;
+
+    box.notification-card {
+      background-color: $bgMain;
+      border-radius: $pRound;
+      padding: $pMin;
+      transition: $tr;
+      border: 0;
+      min-width: 300px;
+      min-height: 0;
+      color: $foreground;
+      margin-bottom: $pMin;
+
+      .notification-card-image-container {
+        margin: 0;
+
+        .notification-card-image {
+          padding: 0;
+          min-width: 0;
+          min-height: 0;
+        }
+      }
+
+      box.horizontal {
+        min-width: 0;
+        min-height: 0;
+      }
+
+      .notification-card-content {
+        min-width: 0;
+        min-height: 0;
+        margin: $vSpace $hSpace $hSpace $hSpace;
+        padding: 0;
+
+        .notification-icon {
+          min-width: 0;
+          min-height: 0;
+          margin: 0;
+          padding: 0;
+          color: $foreground;
+          font-size: $iSize;
+        }
+
+        .notification-card-header-label {
+          margin: 0;
+          padding: 0;
+          margin-left: -$vSpace;
+          font-size: $fSize;
+          min-height: 26.6px;
+          color: $foreground;
+        }
+
+        .notification-card-body-label {
+          margin: 0;
+          padding: 0;
+          color: $foreground;
+        }
+
+        .notification-time {
+          min-height: 26.6px;
+          color: $foreground;
+        }
+
+        .notification-card-body {
+          margin-top: $vSpace;
+        }
+
+        revealer {
+          eventbox {
+            .notification-card-actions {
+              margin: 0;
+              margin-top: $hSpace;
+
+              button {
+                background-color: $bgBtn;
+                border-radius: calc($pRound - $pMin);
+                transition: $tr;
+                min-height: 0;
+                margin: 0;
+                min-width: 0;
+
+                label {
+                  color: $foreground;
+                  padding: $vSpace $hSpace;
+                }
+
+                &:not(:last-child) {
+                  margin-right: $pMin;
+                }
+
+                &:hover {
+                  background-color: $bgHover;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .close-notification-button {
+        background-color: $bgBtn;
+        border-radius: calc($pRound - $pMin);
+        transition: $tr;
+
+        label {
+          color: $foreground;
+        }
+
+        &:hover {
+          background-color: $bgHover;
+        }
+      }
+    }
+  }
+}

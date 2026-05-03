@@ -1,4 +1,4 @@
-![My Desktop Setup](assets/shell.png)
+<img src="assets/shell.png" width="100%">
 
 # Hyprspace | Xiaomi Book Pro 2022
 

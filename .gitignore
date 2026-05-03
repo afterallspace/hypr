@@ -6,7 +6,11 @@
 !/fish/
 !/scripts/
 !/fastfetch/
+!/xdg-desktop-portal/
+!/xsettingsd/
+!/wireplumber/
 !gamemode.ini
 !starship.toml
 !mimeapps.list
+!pkglist.txt
 !.gitignore

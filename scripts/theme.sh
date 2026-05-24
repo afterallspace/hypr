@@ -2,6 +2,7 @@
 
 CACHE_LINK="/home/afterall/.cache/wallpaper"
 HYPRPANEL_STYLE="/home/afterall/.config/hyprpanel/modules.scss"
+WALKER_STYLE="/home/afterall/.config/walker/themes/core/style.scss"
 
 if [ -n "$1" ]; then
     IMAGE_PATH=$(realpath "$1")
@@ -26,5 +27,6 @@ wal -q -i "$IMAGE_PATH"
 killall swaybg 2>/dev/null
 swaybg -i "$CACHE_LINK" -m fill & disown
 touch "$HYPRPANEL_STYLE"
+touch "$WALKER_STYLE"
 
 echo "Done! Colors, wallpaper, panel, and terminal updated."

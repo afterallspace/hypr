@@ -1,0 +1,27 @@
+theme = "core"
+terminal = "kitty"
+
+[providers]
+default = [
+  "symbols",
+  "calc",
+  "desktopapplications",
+  "files",
+  "providerlist",
+  "bluetooth",
+  "clipboard",
+  "runner",
+  "playerctl"
+]
+
+[providers.clipboard]
+prefix = ":"
+
+[providers.runner]
+prefix = ">"
+
+[providers.files]
+prefix = "/"
+
+[providers.calc]
+prefix = "="

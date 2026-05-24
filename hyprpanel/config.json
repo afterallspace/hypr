@@ -366,5 +366,5 @@
   "bar.volume.scrollDown": "hyprpanel vol -2",
   "bar.volume.scrollUp": "hyprpanel vol +2",
   "menus.transitionTime": 300,
-  "notifications.timeout": 3000
+  "notifications.timeout": 7000
 }

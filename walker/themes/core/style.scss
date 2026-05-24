@@ -1,0 +1,89 @@
+@import "/home/afterall/.cache/wal/colors.scss";
+
+// Sizes
+$p: 16px;
+$pMin: 2px;
+$pRound: 12px;
+$gap: 4px;
+$vSpace: 4px;
+$hSpace: 10px;
+$iSize: 1.2rem;
+$fSize: 1rem;
+$fWeight: 500;
+
+// Colors
+$tr: background-color 0.3s ease;
+$trCl: color 0.3s ease;
+$opacity: 0.5;
+$bgMain: $background;
+$bgBtn: rgba($color1, $opacity);
+$bgHover: rgba($color2, $opacity);
+$bgActive: rgba($color3, $opacity);
+
+* {
+  all: unset;
+}
+
+.box-wrapper {
+  background-color: $bgMain;
+  border-radius: $pRound;
+  transition: $tr;
+  padding: $pMin;
+}
+
+.input {
+  color: $foreground;
+  padding: $hSpace;
+  font-size: $fSize;
+
+  placeholder {
+    opacity: $opacity;
+  }
+}
+
+.item-box {
+  padding: $vSpace $hSpace;
+  background-color: $bgBtn;
+  border-radius: calc($pRound - $pMin);
+  margin-bottom: $gap;
+}
+
+child:hover .item-box,
+child:selected .item-box {
+  transition: $tr;
+  background-color: $bgActive;
+}
+
+.item-subtext {
+  font-size: calc($fSize * 0.8);
+  opacity: $opacity;
+}
+
+.item-image,
+.item-image-text {
+  padding: $hSpace;
+  background-color: $bgHover;
+  border-radius: calc($pRound - $pMin);
+  transition: $tr;
+  font-size: $iSize;
+}
+
+.normal-icons,
+.large-icons {
+  -gtk-icon-size: $iSize;
+}
+
+.keybind {
+  background-color: $bgBtn;
+  padding: $hSpace;
+  border-radius: calc($pRound - $pMin);
+}
+
+.keybind {
+  transition: $tr;
+  padding: $vSpace $hSpace;
+}
+
+scrollbar {
+  opacity: 0;
+}

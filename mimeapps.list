@@ -5,6 +5,10 @@ image/png=org.gnome.Loupe.desktop
 inode/directory=org.gnome.Nautilus.desktop
 video/x-matroska=org.gnome.Showtime.desktop
 video/mp4=org.gnome.Showtime.desktop
+x-scheme-handler/bruno=bruno.desktop
+application/json=code.desktop
+application/typescript=code.desktop
+text/vnd.trolltech.linguist=code.desktop
 
 [Added Associations]
 image/jpeg=org.gnome.Loupe.desktop;
@@ -13,3 +17,6 @@ image/png=org.gnome.Loupe.desktop;
 video/x-matroska=org.gnome.Showtime.desktop;
 application/x-partial-download=org.gnome.Showtime.desktop;
 video/mp4=org.gnome.Showtime.desktop;
+application/json=code.desktop;
+application/typescript=code.desktop;
+text/vnd.trolltech.linguist=code.desktop;

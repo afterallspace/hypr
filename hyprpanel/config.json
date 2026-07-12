@@ -8,7 +8,7 @@
   "theme.font.size": "1rem",
   "theme.font.weight": 500,
   "bar.layouts": {
-    "0": {
+    "*": {
       "left": [
         "workspaces",
         "windowtitle"
